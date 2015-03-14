@@ -12,8 +12,9 @@ namespace ConsoleServiceTemplate
 
         static void Main(string[] args)
         {
-            AcceptArgs();
-            StartTimers();
+            AcceptArgs();   //ask for time input
+            StartTimers();  //start the timers and kickoff Process
+            Process();      //first process kickoff at T=0
             Wait();
         }
 
@@ -70,6 +71,11 @@ namespace ConsoleServiceTemplate
         /// <param name="src"></param>
         /// <param name="e"></param>
         private static void Run(object src, ElapsedEventArgs e)
+        {
+            Process();
+        }
+
+        private static void Process()
         {
             Console.WriteLine("Process kickoff.");
         }
